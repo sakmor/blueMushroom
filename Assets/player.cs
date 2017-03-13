@@ -13,7 +13,7 @@ public class player : MonoBehaviour
     void Start()
     {
         score = 0;
-        speed = 50f;
+        speed = 15f;
     }
 
     // Update is called once per frame
