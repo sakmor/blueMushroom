@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
-    GameObject scroeTextOBJ;
-    GameObject blackScreen;
+
     int score;
     public float speed;
     GameObject clickMushroom;
@@ -14,10 +13,7 @@ public class player : MonoBehaviour
     void Start()
     {
         score = 0;
-        blackScreen = GameObject.Find("blackScreen");
-        blackScreen.GetComponent<UnityEngine.UI.Image>().enabled = false;
-        scroeTextOBJ = GameObject.Find("scoreText");
-        speed = 10f;
+        speed = 50f;
     }
 
     // Update is called once per frame
@@ -44,9 +40,7 @@ public class player : MonoBehaviour
         }
         else if (clickMushroom != null)
         {
-
             score++;
-            scroeTextOBJ.GetComponent<UnityEngine.UI.Text>().text = score.ToString("F0");
             Destroy(clickMushroom);
         }
         else
@@ -54,5 +48,10 @@ public class player : MonoBehaviour
             this.GetComponent<Animator>().SetInteger("state", 0);
         }
     }
+    public int getScore()
+    {
+        return score;
+    }
+
 
 }
